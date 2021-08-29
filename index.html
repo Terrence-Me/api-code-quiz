@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/reset.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap"
+    rel="stylesheet">
+
+  <title>API Coding Quiz</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="view-high-score"><a href="highscores.html"> View Highscore: </a><span class="high-score"></span></div>
+    <div class="div-time">Time: <span class="time">0</span></div>
+  </header>
+
+  <main>
+    <section>
+      <div class="instructions">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+          will penalize your score time by five seconds! </p>
+        <button type="button" class="start-button">Start Test</button>
+      </div>
+      <div class="test-area">
+        <div class="questions" id="ques-tion">
+
+        </div>
+        <div id="choices" class="choices">
+
+        </div>
+        <div id="comment" class="comment"></div>
+      </div>
+
+      <div id="result-window" class="display">
+        <h2>Good Work!</h2>
+        <p>Here are your results <span class="results"></span>.</p>
+        <form>
+          Enter your initials: <input type="text" id="initials" maxlength="3">
+          <button id="submit">submit</button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="./assets/app.js"></script>
+</body>
+
+</html>
