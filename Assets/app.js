@@ -10,7 +10,7 @@ let results = document.getElementById("result-window");
 let initialEl = document.getElementById("initials");
 const sumbitbtn = document.getElementById("submit");
 
-let timerCount = 120;
+let timerCount = 20;
 let time;
 let score = 0;
 

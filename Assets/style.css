@@ -96,6 +96,46 @@ section {
   border-top: 2px solid #474545;
 }
 
+.result-screen {
+  border: 2px solid black;
+  width: 50%;
+  align-items: center;
+  margin: 5vh 25vw;
+  text-align: center;
+  font-family: "Fjalla-One", "Times New Roman", Times, serif;
+}
+
+.result-screen h2 {
+  line-height: 40px;
+  font-size: 2rem;
+}
+
+.result-screen p,
+form {
+  font-size: 1.3rem;
+}
+
+form button {
+  background-color: #067771;
+  border-radius: 10px;
+  padding: 10px;
+  color: azure;
+  font-weight: bold;
+  font-size: 1.2rem;
+  /* width: 10%; */
+}
+
 .display {
   visibility: hidden;
+}
+
+.score-list {
+  margin: 30vh auto 0 auto;
+  width: 50vw;
+  height: auto;
+  /* text-align: center; */
+  border: 2px solid black;
+  font-family: "Fjalla-One", "Times New Roman", Times, serif;
+  line-height: 40px;
+  font-size: 2rem;
 }
