@@ -5,6 +5,7 @@ const startButton = document.querySelector(".start-button");
 const testQuestions = document.getElementById("ques-tion");
 const choices = document.getElementById("choices");
 const comment = document.getElementById("comment");
+const instructions = document.querySelector(".instructions");
 let selection = document.querySelectorAll(".choice");
 let results = document.getElementById("result-window");
 let initialEl = document.getElementById("initials");
@@ -32,7 +33,6 @@ let score = 0;
 function startTest() {
   timerCount;
   startButton.disabled = true;
-  let instructions = document.querySelector(".instructions");
   instructions.style.display = "none";
   time = setInterval(timeTracker, 1000);
 
@@ -203,10 +203,8 @@ function savedScore() {
   let initials = initialEl.value.trim();
 
   if (initials !== "") {
-    let highScores = JSON.parse(
-      window.localStorage.getItem("highscores") || []
-    );
-
+    let highScores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
     let newScore = {
       score: time,
       initials: initials,
