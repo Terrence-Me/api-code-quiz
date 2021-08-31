@@ -11,63 +11,45 @@ let results = document.getElementById("result-window");
 let initialEl = document.getElementById("initials");
 const sumbitbtn = document.getElementById("submit");
 
-let timerCount = 20;
+let timerCount = 60;
 let time;
-let score = 0;
-
-// function savehighscore() {
-//   let lastScore = {
-//     initial: score,
-//   };
-//   localStorage.setItem("lastScore", JSON.stringify(lastScore));
-// }
-
-// function renderLastscore() {
-//   let savedScore = JSON.parse(localStorage.getItem("lastScore"));
-//   if (savedScore !== null) {
-//   } else {
-//     return;
-//   }
-// }
+// let score = 0;
 
 function startTest() {
-  timerCount;
+  // timerCount;
   startButton.disabled = true;
   instructions.style.display = "none";
   time = setInterval(timeTracker, 1000);
-
-  // startTimer();
   renderQuestion();
+}
+
+function timeTracker() {
+  timerCount--;
+  timeElement.textContent = timerCount;
+  if (timerCount <= 0) {
+    endTest();
+  }
 }
 
 function endTest() {
   clearInterval(time);
   testArea.style.display = "none";
-  results.removeAttribute("class");
+  results.setAttribute("style", "display: block");
 }
-//
-// timeElement.textContent = 150;
-
-// function startTimer() {
-//   time = setInterval(function () {
-//     timerCount--;
-//     timeElement.textContent = timerCount;
-//     if (timerCount === 0) {
-//       clearInterval(time);
-//     }
-//   }, 1000);
-// }
 
 function answerIsWrong() {
   comment.textContent = "Wrong!";
+  comment.setAttribute("style", "border-top: 3px solid #f80707");
   timerCount -= 5;
   timeElement.textContent = timerCount;
 }
 
 function answerIsCorrect() {
   comment.textContent = "Correct!";
+  comment.setAttribute("style", "border-top: 3px solid #04fa04");
 }
 
+// questions retrieved from: https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm
 let questions = [
   {
     question:
@@ -146,6 +128,7 @@ let questions = [
   },
 ];
 
+// defines index of the last and first qustion in the array.
 let lastQuestionIndex = questions.length - 1;
 let runningQuestionIndex = 0;
 
@@ -154,12 +137,14 @@ function renderQuestion() {
 
   testQuestions.textContent = q.question;
 
+  //clears the multiple choice section after each iteration.
   choices.innerHTML = "";
 
+  // creates buttons out of each multiple choice option.
   q.choices.forEach(function (selection, i) {
     let selectionOp = document.createElement("button");
     selectionOp.setAttribute("class", "selection");
-    selectionOp.setAttribute("value", selection);
+    // selectionOp.setAttribute("value", selection);
 
     selectionOp.textContent = i + 1 + "- " + selection;
 
@@ -187,14 +172,6 @@ function checkAnswer() {
     endTest();
   }
   if (timerCount === 0) {
-    endTest();
-  }
-}
-
-function timeTracker() {
-  timerCount--;
-  timeElement.textContent = timerCount;
-  if (timerCount <= 0) {
     endTest();
   }
 }
