@@ -11,12 +11,6 @@ function printHighscore() {
     console.log(liScore);
     let olLi = document.getElementById("scores-page");
     olLi.appendChild(liScore);
-
-    // let liScore = document.createElement("li");
-    // liScore.textContent = score.initials + "-" + score.score;
-
-    // let olLi = document.getElementById("scores-page");
-    // olLi.appendChild(liScore);
   });
 }
 
